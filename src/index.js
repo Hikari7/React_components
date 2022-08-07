@@ -1,17 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import faker from "faker";
+import CommentDetail from "./CommentDetail";
+//componentを使うためには必ずimportしなければいけない
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const App = () => {
+  return (
+    <div className="ui container comments">
+      <CommentDetail
+        author="Sam"
+        timeAgo="Today at 4:45PM"
+        content="Nice blog post!"
+        avatar={faker.image.image()}
+      />
+      <CommentDetail
+        author="Hikari"
+        timeAgo="Today at 2:00PM"
+        content="Hey JK!"
+        avatar={faker.image.image()}
+      />
+      <CommentDetail
+        author="JungKook"
+        timeAgo="Yesterday at 4:45PM"
+        content="Hey HK!"
+        avatar={faker.image.image()}
+      />
+    </div>
+  );
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(<App />, document.querySelector("#root"));
