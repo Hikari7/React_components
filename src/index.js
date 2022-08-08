@@ -4,6 +4,7 @@ import faker from "faker";
 import CommentDetail from "./CommentDetail";
 //componentを使うためには必ずimportしなければいけない
 import ApprovalCard from "./ApprovalCard";
+import "./style/App.css";
 
 const App = () => {
   return (
